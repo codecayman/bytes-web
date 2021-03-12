@@ -4,9 +4,20 @@
 
 ### Technical details
 
-The application is based on the React TS + Material UI + Redux
+---
+
+Stack
+
+- React TS (Create-React-App)
+- React-Redux
+- React-Router-Dom
+- Redux-Thunk
+- Material UI
+- Styled-Components
 
 ### Running locally
+
+---
 
 1. **Install dependencies.**
 
