@@ -1,1 +1,3 @@
-# Bytes client application
+# Bytes
+
+![BytesLogo](/src/assets/logo/bytes-logo.png)
