@@ -1,25 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 
 // helpers
 import styled from "styled-components";
+import { notifyMeFormSchema } from "../../../../validation/user";
 
 // components
+import FormField from "../../../../components/FormField";
+import { Formik, FormikHelpers } from "formik";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { Button, TextField } from "@material-ui/core";
 
 const NotifyMeForm = () => {
-  return (
-    <Wrapper>
-      <StyledTextField
-        variant="outlined"
-        placeholder="Your email address ..."
-      />
+  const formInitialValues = { email: "" };
+  const [isLoading, setIsLoading] = useState(false);
 
-      <StyledButton variant="contained" color="primary">
-        Notify Me
-        <StyledArrowIcon />
-      </StyledButton>
-    </Wrapper>
+  const handleSubmit = async (values: any, formHelpers: FormikHelpers<any>) => {
+    if (isLoading) {
+      return;
+    }
+
+    setIsLoading(true);
+
+    await new Promise((resolve) =>
+      setTimeout(() => {
+        setIsLoading(false);
+        formHelpers.resetForm();
+
+        resolve(true);
+      }, 1000)
+    );
+    setIsLoading(false);
+  };
+
+  return (
+    <Formik
+      initialValues={formInitialValues}
+      onSubmit={handleSubmit}
+      validateOnBlur={false}
+      validateOnChange={false}
+      validationSchema={notifyMeFormSchema}
+    >
+      {(formik) => (
+        <Wrapper>
+          <FormField
+            name="email"
+            component={StyledTextField}
+            placeholder="Your email address ..."
+            disabled={isLoading}
+            hideErrorMessage
+          />
+
+          <StyledButton
+            variant="contained"
+            color="primary"
+            type="submit"
+            onClick={formik.handleSubmit as any}
+          >
+            Notify Me
+            <StyledArrowIcon />
+          </StyledButton>
+        </Wrapper>
+      )}
+    </Formik>
   );
 };
 

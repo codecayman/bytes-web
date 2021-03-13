@@ -51,6 +51,7 @@
     "@types/redux-logger": "^3.0.8",
     "@types/styled-components": "^5.1.8",
     "react-reveal": "^1.2.2",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "yup": "^0.32.9"
   }
 }
