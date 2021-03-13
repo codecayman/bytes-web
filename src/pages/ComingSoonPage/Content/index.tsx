@@ -6,6 +6,8 @@ import styled from "styled-components";
 // components
 import NotifyMeForm from "./NotifyMeForm";
 
+import { Zoom } from "react-reveal";
+
 // images
 import BytesLogo from "../../../resources/images/logo/bytes-logo.png";
 import RightSideBackground from "../../../resources/images/background/background-6.jpg";
@@ -14,17 +16,19 @@ const Content = () => {
   return (
     <Wrapper>
       <LeftSection>
-        <TitleTextWrapper>We're launching soon!</TitleTextWrapper>
+        <Zoom>
+          <TitleTextWrapper>We're launching soon!</TitleTextWrapper>
 
-        <DescriptionTextWrapper>
-          We are going to launch our website Very soon.
-          <br />
-          Stay Tune.
-        </DescriptionTextWrapper>
+          <DescriptionTextWrapper>
+            We are going to launch our website Very soon.
+            <br />
+            Stay Tune.
+          </DescriptionTextWrapper>
 
-        <GetNotifiedText> Get notified when we launch</GetNotifiedText>
+          <GetNotifiedText> Get notified when we launch</GetNotifiedText>
 
-        <NotifyMeForm />
+          <NotifyMeForm />
+        </Zoom>
       </LeftSection>
 
       <RightSection>
@@ -49,7 +53,7 @@ const LeftSection = styled.section`
   width: 40%;
   height: 100%;
 
-  padding: 50px;
+  padding: 40px;
   margin-top: 30%;
 
   display: flex;

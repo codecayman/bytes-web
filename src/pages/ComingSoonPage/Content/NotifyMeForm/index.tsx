@@ -35,6 +35,8 @@ const StyledTextField = styled(TextField)`
   margin-right: 10px;
 
   .MuiInputBase-root {
+    min-width: 300px !important;
+
     border-radius: 30px !important;
   }
 `;
@@ -42,6 +44,7 @@ const StyledTextField = styled(TextField)`
 const StyledButton = styled(Button)`
   margin-left: 15px !important;
 
+  min-width: 160px !important;
   display: flex;
   flex-grow: 1;
 
