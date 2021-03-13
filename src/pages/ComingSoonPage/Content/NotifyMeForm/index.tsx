@@ -65,34 +65,52 @@ const NotifyMeForm = () => {
   );
 };
 
+// @media screen and (max-width: ${({ theme }) => theme.mobileScreen}) {
+//   ${({ isLastStep }) => isLastStep && 'margin: 0px;'}
+// }
+
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow: auto;
+
+  @media screen and (max-width: 500px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const StyledTextField = styled(TextField)`
-  width: 70%;
-  margin-right: 10px;
+  width: 300px;
 
   .MuiInputBase-root {
+    background-color: #fff;
     min-width: 300px !important;
-
     border-radius: 30px !important;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
   }
 `;
 
 const StyledButton = styled(Button)`
-  margin-left: 15px !important;
-
+  margin-left: 20px !important;
+  height: 56px;
+  width: 170px;
   min-width: 160px !important;
-  display: flex;
-  flex-grow: 1;
 
   font-size: 16px !important;
   border-radius: 30px !important;
   text-transform: none !important;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    margin-left: 0px !important;
+    margin-top: 20px !important;
+  }
 `;
 
 const StyledArrowIcon = styled(ArrowForwardIcon)`
