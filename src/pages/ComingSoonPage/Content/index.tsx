@@ -4,15 +4,18 @@ import React from "react";
 import styled from "styled-components";
 
 // components
-import NotifyMeForm from "./NotifyMeForm";
-
 import { Zoom } from "react-reveal";
+import { Link } from "@material-ui/core";
+import NotifyMeForm from "./NotifyMeForm";
 
 // images
 import BytesLogo from "../../../resources/images/logo/bytes-logo.png";
 import RightSideBackground from "../../../resources/images/background/background-6.jpg";
 
 const Content = () => {
+  const bytesDocumentLink =
+    "https://docs.google.com/document/d/1CxU-VtHOApkKG5FqagaRYLjcM73uFoYELE8Ado1vapg/edit";
+
   return (
     <Wrapper>
       <LeftSection>
@@ -28,6 +31,17 @@ const Content = () => {
           <GetNotifiedText> Get notified when we launch</GetNotifiedText>
 
           <NotifyMeForm />
+
+          <ReadMoreText>
+            Read more about{" "}
+            <Link
+              href={bytesDocumentLink}
+              onClick={console.log}
+              target="_blank"
+            >
+              Bytes
+            </Link>
+          </ReadMoreText>
         </Zoom>
       </LeftSection>
 
@@ -94,6 +108,10 @@ const DescriptionTextWrapper = styled.div`
   font-size: 18px;
   color: #848591;
   line-height: 25px;
+`;
+
+const ReadMoreText = styled(DescriptionTextWrapper)`
+  margin-top: 25px;
 `;
 
 const GetNotifiedText = styled.div`
