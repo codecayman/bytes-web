@@ -10,7 +10,7 @@ import NotifyMeForm from "./NotifyMeForm";
 
 // images
 import BytesLogo from "../../../resources/images/logo/bytes-logo.png";
-import RightSideBackground from "../../../resources/images/background/background-6.jpg";
+import RightSideBackground from "../../../resources/images/background/coming-soon-background.jpg";
 
 const Content = () => {
   const bytesDocumentLink =
@@ -18,7 +18,9 @@ const Content = () => {
 
   return (
     <Wrapper>
-      <LeftSection>
+      <ContentSection>
+        <StyledLogoImage src={BytesLogo} />
+
         <Zoom>
           <TitleTextWrapper>We're launching soon!</TitleTextWrapper>
 
@@ -43,11 +45,7 @@ const Content = () => {
             </Link>
           </ReadMoreText>
         </Zoom>
-      </LeftSection>
-
-      <RightSection>
-        <StyledLogoImage src={BytesLogo} />
-      </RightSection>
+      </ContentSection>
     </Wrapper>
   );
 };
@@ -61,33 +59,32 @@ const Wrapper = styled.section`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-`;
-
-const LeftSection = styled.section`
-  width: 40%;
-  height: 100%;
-
-  padding: 40px;
-  margin-top: 30%;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const RightSection = styled.section`
-  height: 100%;
-
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: center;
 
   background-color: #fff;
   background-image: url(${RightSideBackground});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  overflow: auto;
+  overflow-x: hidden;
+`;
+
+const ContentSection = styled.section`
+  width: 600px;
+  height: 100%;
+  max-width: 100%;
+
+  padding: 40px;
+  margin-top: 10%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media screen and (max-width: 500px) {
+    padding: 20px;
+  }
 `;
 
 const StyledLogoImage = styled.img`
@@ -101,6 +98,12 @@ const TitleTextWrapper = styled.div`
   color: #4925c6;
   font-size: 45px;
   font-weight: 500;
+
+  text-align: center;
+
+  @media screen and (max-width: 500px) {
+    font-size: 30px;
+  }
 `;
 
 const DescriptionTextWrapper = styled.div`
