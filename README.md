@@ -1,6 +1,6 @@
 # Bytes client
 
-![BytesLogo](/src/assets/logo/bytes-logo.png)
+![BytesLogo](/src/resources/images/logo/bytes-logo.png)
 
 ### Technical details
 
