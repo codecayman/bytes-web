@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { connectRouter } from "connected-react-router";
 
-export interface StoreModel {}
+export interface StoreModel { }
 
 const rootReducer = (history: any) =>
   combineReducers({

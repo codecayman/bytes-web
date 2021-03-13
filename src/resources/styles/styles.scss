@@ -1,6 +1,15 @@
 @import "./fonts.scss";
 @import "./reset.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f2f8fd;
+}
+
+.root {
+  overflow: hidden;
 }
