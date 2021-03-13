@@ -1,7 +1,12 @@
 import React from "react";
+import ComingSoonPage from "./pages/ComingSoonPage";
 
-function App() {
-  return <div>Hello world</div>;
-}
+const App = () => {
+  return (
+    <>
+      <ComingSoonPage />
+    </>
+  );
+};
 
 export default App;
